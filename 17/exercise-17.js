@@ -3,19 +3,19 @@ function calculate() {
     value: 0,
     add(num) {
       this.value += num;
-      return calc;
+      return this;
     },
     multiply(num) {
       this.value *= num;
-      return calc;
+      return this;
     },
     sub(num) {
       this.value -= num;
-      return calc;
+      return this;
     },
     divide(num) {
       this.value /= num;
-      return calc;
+      return this;
     },
     printResult() {
       return console.log(this.value);
