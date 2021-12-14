@@ -1,17 +1,17 @@
 const person = {
   firstName: null,
   lastName: null,
-  set setFirstName(firstName) {
-    this.firstName = firstName;
+  set firstName(firstName) {
+    this._firstName = firstName;
   },
-  get getFirstName() {
-    return this.firstName;
+  get firstName() {
+    return this._firstName;
   },
-  set setLastName(lastName) {
-    this.lastName = lastName;
+  set lastName(lastName) {
+    this._lastName = lastName;
   },
-  get getLastName() {
-    return this.lastName;
+  get lastName() {
+    return this._lastName;
   },
   fullName() {
     return `${this.firstName} ${this.lastName}`;
