@@ -5,7 +5,11 @@ class BankAccount {
     this.#amount = initialAmount;
   }
 
-  get getAmount() {
+  set amount(amount) {
+    this.#amount = amount;
+  }
+
+  get amount() {
     return this.#amount;
   }
 
@@ -27,7 +31,7 @@ class BankAccountVip extends BankAccount {
     super(initialAmount);
   }
   deposit(amount) {
-    if (super.getAmount + amount >= 1000) {
+    if (super.amount + amount >= 1000) {
       let newAmount = amount + ((amount / 100) * 3);
       super.deposit(newAmount);
     } else {
