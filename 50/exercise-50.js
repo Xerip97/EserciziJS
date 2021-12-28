@@ -6,7 +6,7 @@ class Person {
     this.age = age;
   }
 
-  fromJson(json) {
+  static fromJson(json) {
     const person = JSON.parse(json);
     return new Person(...(Object.values(person)));
   }
@@ -17,6 +17,16 @@ class Person {
 }
 
 const json = '{"id":1,"firstName":"Mario","lastName":"Rossi","age":25}';
-let developer = new Person;
-developer = developer.fromJson(json);
+let developer = Person.fromJson(json);
 console.log(developer);
+
+class Maty {
+  static metodo1() {
+
+  }
+  static sum(a, b) {
+    return a + b;
+  }
+}
+
+console.log(Maty.sum(2, 3));
