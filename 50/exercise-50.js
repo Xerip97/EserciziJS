@@ -19,14 +19,3 @@ class Person {
 const json = '{"id":1,"firstName":"Mario","lastName":"Rossi","age":25}';
 let developer = Person.fromJson(json);
 console.log(developer);
-
-class Maty {
-  static metodo1() {
-
-  }
-  static sum(a, b) {
-    return a + b;
-  }
-}
-
-console.log(Maty.sum(2, 3));
