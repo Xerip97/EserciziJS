@@ -17,11 +17,11 @@
     post = await pickPost();
   });
 
-  const pickPost = async function () {
+  async function pickPost() {
     const res = await fetch(url);
     const data = res.json();
     return data;
-  };
+  }
 
   savePost.addEventListener("click", async function (event) {
     event.preventDefault();
