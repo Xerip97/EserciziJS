@@ -1,0 +1,26 @@
+<html>
+  <body>
+    <div id="container">
+      <button type="button" id="fetch-post">
+        Fetch Post from LocalStorage
+      </button>
+
+      <h2>Post: <span id="post-title"></span></h2>
+    </div>
+  </body>
+</html>
+
+<script>
+  const fetchPostBtn = document.querySelector("#fetch-post");
+  const postTitle = document.querySelector("#post-title");
+
+  fetchPostBtn.addEventListener("click", async function (event) {
+    event.preventDefault();
+    let { title } = await fetchPostFromLocalStorage("post 1");
+    postTitle.innerText = `${title}`;
+  });
+  function fetchPostFromLocalStorage(post) {
+    this.post = JSON.parse(localStorage.getItem(`${post}`));
+    return this.post;
+  }
+</script>

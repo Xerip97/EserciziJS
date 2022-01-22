@@ -26,7 +26,7 @@
   savePost.addEventListener("click", async function (event) {
     event.preventDefault();
     if (Object.keys(post).length > 0) {
-      localStorage.setItem(post.id, JSON.stringify(post));
+      localStorage.setItem(`post ${post.id}`, JSON.stringify(post));
     }
   });
 </script>
