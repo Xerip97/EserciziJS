@@ -1,0 +1,37 @@
+<html>
+  <body>
+    <div id="container">
+      <h2>Person's Form</h2>
+      <form id="person-form">
+        <button id="submit-person-form" type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+<script>
+  const submit = document.querySelector("#submit-person-form");
+
+  document.addEventListener("DOMContentLoaded", function initForm(event) {
+    event.preventDefault();
+    const temp = document.createElement("div");
+    temp.innerHTML = `    
+    <label>First name: </label>
+    <input class="person-info" data-label="firstName" type="text"></input><br>
+    <label>Last name: </label>
+    <input class="person-info" data-label="lastName" type="text"></input><br>
+    <label>Age: </label>
+    <input class="person-info" data-label="age" type="number"></input><br>`;
+    submit.before(temp);
+  });
+
+  submit.addEventListener("click", function submitPersonForm(event) {
+    event.preventDefault();
+    const personInfo = document.querySelectorAll(".person-info");
+    let person = {};
+    personInfo.forEach((element) => {
+      person[element.getAttribute("data-label")] = element.value;
+    });
+    console.log(person);
+  });
+</script>
