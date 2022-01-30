@@ -16,17 +16,16 @@
     event.preventDefault();
     const temp = document.createElement("div");
     temp.innerHTML = `    
-    <label>First name: </label>
-    <input class="person-info" data-label="firstName" type="text"></input><br>
-    <label>Last name: </label>
-    <input class="person-info" data-label="lastName" type="text"></input><br>
-    <label>Age: </label>
-    <input class="person-info" data-label="age" type="number"></input><br>`;
+      <label>First name: </label>
+      <input class="person-info" data-label="firstName" required type="text"></input><br>
+      <label>Last name: </label>
+      <input class="person-info" data-label="lastName" required type="text"></input><br>
+      <label>Age: </label>
+      <input class="person-info" data-label="age" required type="number"></input><br>`;
     submit.before(temp);
   });
 
   submit.addEventListener("click", function submitPersonForm(event) {
-    event.preventDefault();
     const personInfo = document.querySelectorAll(".person-info");
     let person = {};
     personInfo.forEach((element) => {
